@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.cursive {
+  font-family: "Cedarville Cursive", cursive;
+}
+.Welcome-text {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
+  background-blend-mode: normal, screen;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.Welcome-box {
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 32px;
+  box-shadow: inset 0 -7px 11px #a48fff1f;
+  display: flex;
+
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+}
+
+.button-primary {
+  background: linear-gradient(
+      180deg,
+      rgba(60, 8, 126, 0) 0%,
+      rgba(60, 8, 126, 0.32) 100%
+    ),
+    rgba(113, 47, 255, 0.12);
+  box-shadow: inset 0 0 12px #bf97ff3d;
+}
+.button-primary:hover {
+  background: linear-gradient(
+      180deg,
+      rgba(60, 8, 126, 0) 0%,
+      rgba(60, 8, 126, 0.42) 100%
+    ),
+    rgba(113, 47, 255, 0.24);
+  box-shadow: inset 0 0 12px #bf97ff70;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+.fixed-frame {
+  width: 768px; /* Fixed width */
+  height: 1024px; /* Fixed height */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #000; /* Optional, to visualize the frame */
+  overflow: hidden; /* Hide overflow content */
+}
+
+
+.glow {
+  animation: glow 1.5s infinite;
+  text-shadow: 0 0 5px white, 0 0 10px rgba(255, 255, 255, 0.268), 0 0 15px rgba(255, 255, 255, 0);
+}
+.mix-blend-screen {
+  mix-blend-mode: screen;
+}
+.backdrop-blur-lg {
+  backdrop-filter: blur(10px);
+}
+.btn-82 {
+  position: relative;
+  padding: 25px 150px; /* Increased padding to make the button wider */
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem; /* Increased font size to make the text larger */
+  text-transform: uppercase;
+  font-family: sans-serif; /* or match with your project font */
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .1);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+  background-color: #000; /* Changed background color for better contrast */
+}
+
+.btn-82:before,
+.btn-82:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, .1);
+}
+
+.btn-82:after {
+  left: -100%;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.btn-82:hover:after {
+  left: 100%;
+}
+
+.btn-82 span {
+  position: absolute;
+  display: block;
+  transition: 0.5s ease;
+}
+
+.btn-82 span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+}
+
+.btn-82:hover span:nth-child(1) {
+  width: 100%;
+  height: 1px;
+  transform: translateX(100%);
+}
+
+.btn-82 span:nth-child(2) {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 0;
+  background: #fff;
+}
+
+.btn-82:hover span:nth-child(2) {
+  height: 100%;
+  transform: translateY(100%);
+}
+
+.btn-82 span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+}
+
+.btn-82:hover span:nth-child(3) {
+  width: 100%;
+  height: 1px;
+  transform: translateX(-100%);
+}
+
+.btn-82 span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  height: 0;
+  background: #fff;
+}
+
+.btn-82:hover span:nth-child(4) {
+  height: 100%;
+  transform: translateY(-100%);
+}
+glass-button {
+  display: inline-block;
+  padding: 24px 40px;
+  border: 0;
+  text-decoration: none;
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(30px);
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  letter-spacing: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.glass-button:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+.glass-panel {
+  color: #fff;
+  margin: 120px auto;
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+  border-radius:20px;
+  padding: 20px;
+  backdrop-filter: blur(40px);
+}

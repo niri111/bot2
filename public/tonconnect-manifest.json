@@ -1,0 +1,7 @@
+{
+  "url": " https://11a2-105-235-134-138.ngrok-free.app",                        // required
+  "name": "My Cool App",                      // required
+  "iconUrl": "https://jade-many-cricket-911.mypinata.cloud/ipfs/QmPJ4ZNaVN9qzktZDXpho494sWcFLeUutVzvWXGNXJo6Qc",               // required
+  "termsOfUseUrl": "<terms-of-use-url>",     // optional
+  "privacyPolicyUrl": "<privacy-policy-url>" // optional
+}
