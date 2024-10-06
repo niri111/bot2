@@ -1,3 +1,4 @@
+// app/page.tsx
 'use client';
 import { useState } from "react";
 import HomeSection from "./components/main/HomeSection";
@@ -8,6 +9,7 @@ import WalletSection from "./components/main/WalletSection";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import Loading from "./components/main/louading"; // Import Loading component
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string>('home'); // Initial section
@@ -24,11 +26,7 @@ export default function Home() {
       <Navbar onSectionChange={handleSectionChange} />
 
       {/* Add a loading indicator */}
-      {sectionLoading && (
-        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-          <div className="loader" />
-        </div>
-      )}
+      {sectionLoading && <Loading />}
 
       {/* Section with Animation */}
       <AnimatePresence>
@@ -45,10 +43,10 @@ export default function Home() {
           {activeSection === 'task' && <TaskSection />}
           {activeSection === 'friends' && <FriendsSection />}
           {activeSection === 'wallet' && (  
-            <TonConnectUIProvider manifestUrl="https://raw.githubusercontent.com/ton-blockchain/wallets-list/main/wallets-v2.json">
+            <TonConnectUIProvider manifestUrl='https://432b-105-235-134-42.ngrok-free.app/tonconnect-manifest.json'>
               <WalletSection />
             </TonConnectUIProvider>
-        )}
+          )}
           {/* Optional: Add a fallback for undefined sections */}
           {activeSection !== 'home' && activeSection !== 'task' && activeSection !== 'friends' && activeSection !== 'wallet' && (
             <div className="text-red-500">Section not found!</div>

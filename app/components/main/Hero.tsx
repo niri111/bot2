@@ -123,7 +123,7 @@ const Hero = () => {
   return (
     <div className='flex flex-col items-center justify-between h-screen w-full p-4'>
       {/* User Profile Component */}
-      <Profile userData={userData} />
+      
 <div className="glass-panel flex justify-center items-center h-full  p-4 mb-4">
 
       {/* Centered Claim Button */}
