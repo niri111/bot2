@@ -8,12 +8,13 @@ generator client {
 }
 
 model User {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  telegramId Int     @unique
-  username   String?
-  firstName  String?
-  lastName   String?
-  points     Int     @default(0)
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  telegramId  Int     @unique
+  username     String?
+  firstName    String?
+  lastName     String?
+  points       Int     @default(0)
+  lastClaimed  DateTime? // Add this line
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }

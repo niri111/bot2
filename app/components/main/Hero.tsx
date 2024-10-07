@@ -150,8 +150,7 @@ const Hero = () => {
     handleClaim();
     handleIncreasePoints();
   }}
-  disabled={!canClaim}
->
+  disabled={!canClaim}>
   <span className="text-center text-sm">{canClaim ? 'Claim Your Token' : `Claim Again in ${formatTime(timeLeft)}`}</span>
 </button>
 

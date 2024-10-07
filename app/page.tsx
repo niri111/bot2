@@ -1,4 +1,3 @@
-// app/page.tsx
 'use client';
 import { useState } from "react";
 import HomeSection from "./components/main/HomeSection";
@@ -9,15 +8,12 @@ import WalletSection from "./components/main/WalletSection";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import Loading from "./components/main/louading"; // Import Loading component
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string>('home'); // Initial section
-  const [sectionLoading, setSectionLoading] = useState(false); // Add a loading state
 
   // Function to handle section change
   const handleSectionChange = (section: string) => {
-    setSectionLoading(true); // Set loading state to true
     setActiveSection(section);
   };
 
@@ -25,25 +21,21 @@ export default function Home() {
     <main className="min-h-full min-w-full">
       <Navbar onSectionChange={handleSectionChange} />
 
-      {/* Add a loading indicator */}
-      {sectionLoading && <Loading />}
-
-      {/* Section with Animation */}
+      {/* Section with simplified animation */}
       <AnimatePresence>
         <motion.div
           key={activeSection} // Use key for animation on section change
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }} // Start fully transparent
+          animate={{ opacity: 1 }} // Fade in
+          exit={{ opacity: 0 }} // Fade out
+          transition={{ duration: 0.5 }} // Duration of 0.5 seconds
           aria-live="polite" // Improve accessibility
-          onAnimationComplete={() => setSectionLoading(false)} // Set loading state to false when animation completes
         >
           {activeSection === 'home' && <HomeSection />}
           {activeSection === 'task' && <TaskSection />}
           {activeSection === 'friends' && <FriendsSection />}
           {activeSection === 'wallet' && (  
-            <TonConnectUIProvider manifestUrl='https://432b-105-235-134-42.ngrok-free.app/tonconnect-manifest.json'>
+            <TonConnectUIProvider manifestUrl='https://f30f-105-235-135-100.ngrok-free.app/tonconnect-manifest.json'>
               <WalletSection />
             </TonConnectUIProvider>
           )}

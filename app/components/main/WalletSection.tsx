@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { TonConnectUIProvider, useTonConnectUI } from '@tonconnect/ui-react';
+import { TonConnectButton, TonConnectUIProvider, useTonConnectUI } from '@tonconnect/ui-react';
 import { Address } from '@ton/core';
 import Image from 'next/image';
 
@@ -73,8 +73,8 @@ const WalletSection = () => {
 
   return (
     
-    <div className="flex min-h-screen flex-col items-center justify-center">
-     
+      <><TonConnectButton /><div className="flex min-h-screen flex-col items-center justify-center">
+
       <h1 className="text-4xl font-bold mb-8 text-white glowtext-white glow">TON Wallet</h1>
       {tonWalletAddress ? (
         <div className="flex flex-col items-center">
@@ -95,10 +95,10 @@ const WalletSection = () => {
           <span className="mx-2">Connect TON Wallet</span>
           <Image src="/telegram.svg" alt="Telegram Icon" width={20} height={20} />
         </button>
-        
+
       )}
-      
-    </div>
+
+    </div></>
   );
 };
 

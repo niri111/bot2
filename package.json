@@ -19,6 +19,7 @@
     "@tonconnect/ui-react": "^2.0.9",
     "@twa-dev/sdk": "^7.10.1",
     "@twa-dev/types": "^7.10.0",
+    "date-fns": "^4.1.0",
     "install": "^0.13.0",
     "ionicons": "^7.4.0",
     "mongodb": "^6.9.0",

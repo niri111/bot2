@@ -16,7 +16,7 @@ interface UserData {
 }
 
 const Profile: React.FC = () => {
-  const [userData, setUserData] = useState<UserData | null>(null);
+  const [puserData, setUserData] = useState<UserData | null>(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && WebApp.initDataUnsafe.user) {
@@ -32,7 +32,7 @@ const Profile: React.FC = () => {
           <p className="text-gray-400">Level: </p>
         </div>
         <div className="ml-4 text-white">
-          <h2 className="text-xl font-bold">{userData?.first_name || 'User'}</h2>
+          <h2 className="text-xl font-bold">{puserData?.first_name || 'User'}</h2>
           <p className="text-gray-200">
             Crypto Balance: <span className="text-white glow">0 DOT</span>
           </p>
